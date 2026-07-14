@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>关于 | Xinma's Blog</title>
+  <meta name="description" content="关于 Xinma's Blog：一个记录学习、技术与生活的中文个人博客。">
+  <link rel="canonical" href="https://xinma5993-glitch.github.io/blog/about.html">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="关于 | Xinma's Blog">
+  <meta property="og:description" content="了解这个博客的用途和作者 xinma5993-glitch。">
+  <meta property="og:url" content="https://xinma5993-glitch.github.io/blog/about.html">
+  <meta property="og:site_name" content="Xinma's Blog">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
+  <script>
+    (function () {
+      var theme = localStorage.getItem('theme');
+      if (theme === 'light' || theme === 'dark') {
+        document.documentElement.dataset.theme = theme;
+      }
+    }());
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="主导航">
+      <a class="brand" href="index.html" aria-label="Xinma's Blog 首页">
+        <img src="assets/images/avatar.svg" alt="" width="40" height="40">
+        <span>Xinma's Blog</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="index.html#posts">文章</a>
+        <a href="about.html" aria-current="page">关于</a>
+      </div>
+      <button class="theme-toggle" type="button" aria-label="切换深色或浅色模式" aria-pressed="false">
+        <span class="theme-icon" aria-hidden="true"></span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main" class="page-main wrap">
+    <article class="content-page">
+      <p class="eyebrow">About</p>
+      <h1>关于这个博客</h1>
+      <p>Xinma's Blog 是 xinma5993-glitch 用来记录学习、技术与生活的个人博客。这里适合保存配置过程、阅读笔记、问题复盘和阶段性总结。</p>
+      <p>目前页面中的介绍和示例文章都可以作为起点继续替换。你可以稍后把这里改成更具体的个人介绍、学习方向或联系方式；为了避免公开个人信息，当前页面只保留 GitHub 链接。</p>
+      <section aria-labelledby="author-title">
+        <h2 id="author-title">作者</h2>
+        <div class="profile">
+          <img src="assets/images/avatar.svg" alt="xinma5993-glitch 的简洁头像" width="88" height="88">
+          <div>
+            <h3>xinma5993-glitch</h3>
+            <p>保持记录，持续整理。更多资料可以在 GitHub 仓库中继续维护。</p>
+            <a class="button secondary" href="https://github.com/xinma5993-glitch" rel="noopener">访问 GitHub</a>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>&copy; <span data-current-year>2026</span> xinma5993-glitch.</p>
+      <a href="https://github.com/xinma5993-glitch/blog" rel="noopener">GitHub 仓库</a>
+    </div>
+  </footer>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>页面未找到 | Xinma's Blog</title>
+  <meta name="description" content="Xinma's Blog 的 404 页面，帮助返回首页或文章列表。">
+  <link rel="canonical" href="https://xinma5993-glitch.github.io/blog/404.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="页面未找到 | Xinma's Blog">
+  <meta property="og:description" content="这个页面不存在，返回 Xinma's Blog 首页继续浏览。">
+  <meta property="og:url" content="https://xinma5993-glitch.github.io/blog/404.html">
+  <meta property="og:site_name" content="Xinma's Blog">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
+  <script>
+    (function () {
+      var theme = localStorage.getItem('theme');
+      if (theme === 'light' || theme === 'dark') {
+        document.documentElement.dataset.theme = theme;
+      }
+    }());
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <main id="main" class="not-found wrap">
+    <p class="eyebrow">404</p>
+    <h1>页面没有找到</h1>
+    <p>这个地址可能已经移动，或者文章还没有发布。你可以回到首页继续浏览已有内容。</p>
+    <a class="button primary" href="index.html">返回首页</a>
+  </main>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>欢迎来到我的博客 | Xinma's Blog</title>
+  <meta name="description" content="第一篇欢迎文章，说明 Xinma's Blog 将记录学习、技术与生活。">
+  <link rel="canonical" href="https://xinma5993-glitch.github.io/blog/posts/welcome.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="欢迎来到我的博客">
+  <meta property="og:description" content="这个博客会记录什么，以及如何逐步替换示例内容。">
+  <meta property="og:url" content="https://xinma5993-glitch.github.io/blog/posts/welcome.html">
+  <meta property="og:site_name" content="Xinma's Blog">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="../site.webmanifest">
+  <script>
+    (function () {
+      var theme = localStorage.getItem('theme');
+      if (theme === 'light' || theme === 'dark') {
+        document.documentElement.dataset.theme = theme;
+      }
+    }());
+  </script>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="主导航">
+      <a class="brand" href="../index.html" aria-label="Xinma's Blog 首页">
+        <img src="../assets/images/avatar.svg" alt="" width="40" height="40">
+        <span>Xinma's Blog</span>
+      </a>
+      <div class="nav-links">
+        <a href="../index.html">首页</a>
+        <a href="../index.html#posts">文章</a>
+        <a href="../about.html">关于</a>
+      </div>
+      <button class="theme-toggle" type="button" aria-label="切换深色或浅色模式" aria-pressed="false">
+        <span class="theme-icon" aria-hidden="true"></span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main" class="wrap article-layout">
+    <article class="article">
+      <header class="article-header">
+        <a class="back-link" href="../index.html#posts">返回文章列表</a>
+        <h1>欢迎来到我的博客</h1>
+        <div class="post-meta">
+          <time datetime="2026-07-14">2026-07-14</time>
+          <span>博客</span>
+          <span>开始</span>
+        </div>
+      </header>
+      <p>这是 Xinma's Blog 的第一篇示例文章。它不是一个空模板，而是一篇可以直接阅读的起点：后续你可以把这里替换成真正的个人记录、学习总结或项目复盘。</p>
+      <p>我希望这个博客保持简单。没有复杂的构建流程，没有依赖外部服务的页面资源，也不需要数据库。每一篇文章都是普通 HTML 文件，修改后可以直接通过 GitHub Pages 发布。</p>
+      <h2>这里会记录什么</h2>
+      <p>可以记录的内容包括：一次工具配置的过程、读完一篇资料后的理解、遇到问题时的排查路径、阶段性学习计划，以及生活中值得回看的片段。重点不是写得多，而是让每次记录都能在未来帮自己节省时间。</p>
+      <h2>如何替换这篇文章</h2>
+      <p>当你准备发布自己的第一篇正式文章时，可以保留页面结构，替换标题、日期、标签和正文。首页的文章卡片也要同步修改，确保读者能从首页进入新文章。</p>
+      <p>如果还没有明确主题，可以先写一篇短复盘：今天完成了什么、为什么这样做、下次要注意什么。这类笔记最容易开始，也最容易坚持。</p>
+      <nav class="article-nav" aria-label="文章导航">
+        <a href="../index.html">返回首页</a>
+        <a href="git-and-github.html">下一篇：Git、GitHub 与第一次提交</a>
+      </nav>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>&copy; <span data-current-year>2026</span> xinma5993-glitch.</p>
+      <a href="https://github.com/xinma5993-glitch/blog" rel="noopener">GitHub 仓库</a>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

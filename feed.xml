@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Xinma's Blog</title>
+  <subtitle>记录学习、技术与生活</subtitle>
+  <link href="https://xinma5993-glitch.github.io/blog/feed.xml" rel="self"/>
+  <link href="https://xinma5993-glitch.github.io/blog/"/>
+  <id>https://xinma5993-glitch.github.io/blog/</id>
+  <updated>2026-07-14T00:00:00+08:00</updated>
+  <author>
+    <name>xinma5993-glitch</name>
+  </author>
+  <entry>
+    <title>欢迎来到我的博客</title>
+    <link href="https://xinma5993-glitch.github.io/blog/posts/welcome.html"/>
+    <id>https://xinma5993-glitch.github.io/blog/posts/welcome.html</id>
+    <updated>2026-07-14T00:00:00+08:00</updated>
+    <summary>这个博客会记录什么，以及如何把示例内容逐步替换成真正的个人笔记。</summary>
+  </entry>
+  <entry>
+    <title>Git、GitHub 与第一次提交</title>
+    <link href="https://xinma5993-glitch.github.io/blog/posts/git-and-github.html"/>
+    <id>https://xinma5993-glitch.github.io/blog/posts/git-and-github.html</id>
+    <updated>2026-07-14T00:00:00+08:00</updated>
+    <summary>梳理仓库、提交、远程地址和 GitHub Pages 之间的关系。</summary>
+  </entry>
+  <entry>
+    <title>如何整理自己的学习笔记</title>
+    <link href="https://xinma5993-glitch.github.io/blog/posts/learning-notes.html"/>
+    <id>https://xinma5993-glitch.github.io/blog/posts/learning-notes.html</id>
+    <updated>2026-07-14T00:00:00+08:00</updated>
+    <summary>一套低负担、可长期坚持的学习笔记整理方法。</summary>
+  </entry>
+</feed>

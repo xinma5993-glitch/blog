@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Xinma's Blog 头像</title>
+  <desc id="desc">由字母 X 和简洁几何线条组成的原创头像。</desc>
+  <rect width="256" height="256" rx="56" fill="#0f766e"/>
+  <circle cx="128" cy="128" r="82" fill="#ecfeff" opacity="0.95"/>
+  <path d="M79 79l98 98M177 79l-98 98" fill="none" stroke="#0f766e" stroke-width="20" stroke-linecap="round"/>
+  <path d="M83 184h90" fill="none" stroke="#0b5f59" stroke-width="12" stroke-linecap="round"/>
+</svg>
