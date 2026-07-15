@@ -29,11 +29,13 @@
     <nav class="nav wrap" aria-label="主导航">
       <a class="brand" href="../index.html" aria-label="Xinma's Blog 首页">
         <img src="../assets/images/avatar.svg" alt="" width="40" height="40">
-        <span>Xinma's Blog</span>
+        <span data-site-name>Xinma's Blog</span>
       </a>
       <div class="nav-links">
         <a href="../index.html">首页</a>
         <a href="../index.html#posts">文章</a>
+        <a href="../plan.html">计划</a>
+        <a href="../edit.html">编辑</a>
         <a href="../about.html">关于</a>
       </div>
       <button class="theme-toggle" type="button" aria-label="切换深色或浅色模式" aria-pressed="false">
@@ -43,16 +45,17 @@
   </header>
 
   <main id="main" class="wrap article-layout">
-    <article class="article">
+    <article class="article" data-post-page="git-and-github">
       <header class="article-header">
         <a class="back-link" href="../index.html#posts">返回文章列表</a>
-        <h1>Git、GitHub 与第一次提交</h1>
+        <h1 data-post-title>Git、GitHub 与第一次提交</h1>
         <div class="post-meta">
-          <time datetime="2026-07-14">2026-07-14</time>
-          <span>Git</span>
-          <span>GitHub</span>
+          <time datetime="2026-07-14" data-post-date>2026-07-14</time>
+          <span data-post-tag>Git</span>
+          <span data-post-tag>GitHub</span>
         </div>
       </header>
+      <div data-post-body>
       <p>第一次把项目推到 GitHub 时，最容易混淆的是三个概念：本地仓库、提交和远程仓库。本地仓库保存项目历史，提交是某一刻的快照，远程仓库则负责备份和协作。</p>
       <p>一个稳妥的流程通常是先确认当前目录内容，再创建或检查 `.gitignore`，然后设置提交作者、创建提交、配置 `origin`，最后推送到远程分支。每一步都可以通过 `git status` 看清楚当前状态。</p>
       <h2>为什么先提交再推送</h2>
@@ -61,6 +64,7 @@
       <p>HTTPS 适合配合 GitHub CLI 使用，登录后 Git 可以通过凭据管理器完成认证。SSH 则需要本机有公钥并把公钥添加到 GitHub。两种方式都可以，关键是 remote 地址要和认证方式一致。</p>
       <h2>这篇内容可以如何替换</h2>
       <p>这是一篇示例技术文章。你可以把它替换成某个工具的配置记录，保留“背景、步骤、问题、结论”的结构，让以后回看时能快速找到关键命令和判断依据。</p>
+      </div>
       <nav class="article-nav" aria-label="文章导航">
         <a href="welcome.html">上一篇：欢迎来到我的博客</a>
         <a href="learning-notes.html">下一篇：如何整理自己的学习笔记</a>

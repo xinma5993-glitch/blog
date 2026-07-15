@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>计划表 | Xinma's Blog</title>
+  <meta name="description" content="Xinma's Blog 的个人学习和写作计划表，可在浏览器中本地编辑和导出。">
+  <link rel="canonical" href="https://xinma5993-glitch.github.io/blog/plan.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="计划表 | Xinma's Blog">
+  <meta property="og:description" content="整理博客写作、学习和维护任务。">
+  <meta property="og:url" content="https://xinma5993-glitch.github.io/blog/plan.html">
+  <meta property="og:site_name" content="Xinma's Blog">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
+  <script>
+    (function () {
+      var theme = localStorage.getItem('theme');
+      if (theme === 'light' || theme === 'dark') {
+        document.documentElement.dataset.theme = theme;
+      }
+    }());
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="主导航">
+      <a class="brand" href="index.html" aria-label="Xinma's Blog 首页">
+        <img src="assets/images/avatar.svg" alt="" width="40" height="40">
+        <span data-site-name>Xinma's Blog</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="index.html#posts">文章</a>
+        <a href="plan.html" aria-current="page">计划</a>
+        <a href="edit.html">编辑</a>
+        <a href="about.html">关于</a>
+      </div>
+      <button class="theme-toggle" type="button" aria-label="切换深色或浅色模式" aria-pressed="false">
+        <span class="theme-icon" aria-hidden="true"></span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main" class="page-main wrap">
+    <section class="content-page planner-page" aria-labelledby="plan-title">
+      <p class="eyebrow">Planner</p>
+      <h1 id="plan-title">博客计划表</h1>
+      <p>这里可以整理写作、学习和网站维护任务。改动会保存在当前浏览器中；需要迁移时可以导出 JSON，再在其他浏览器中导入。</p>
+
+      <div class="tool-actions">
+        <button class="button primary" type="button" data-plan-add>新增任务</button>
+        <button class="button secondary" type="button" data-plan-save>保存计划</button>
+        <button class="button secondary" type="button" data-plan-export>导出 JSON</button>
+        <label class="file-button">
+          导入 JSON
+          <input type="file" accept="application/json" data-plan-import>
+        </label>
+        <button class="button secondary" type="button" data-plan-reset>恢复默认</button>
+      </div>
+
+      <div class="table-wrap" aria-live="polite">
+        <table class="plan-table">
+          <caption>学习、写作和维护任务</caption>
+          <thead>
+            <tr>
+              <th scope="col">任务</th>
+              <th scope="col">分类</th>
+              <th scope="col">日期</th>
+              <th scope="col">状态</th>
+              <th scope="col">备注</th>
+              <th scope="col">操作</th>
+            </tr>
+          </thead>
+          <tbody data-plan-body></tbody>
+        </table>
+      </div>
+      <p class="status-text" data-plan-status role="status"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>&copy; <span data-current-year>2026</span> xinma5993-glitch.</p>
+      <a href="https://github.com/xinma5993-glitch/blog" rel="noopener">GitHub 仓库</a>
+    </div>
+  </footer>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/planner.js" defer></script>
+</body>
+</html>

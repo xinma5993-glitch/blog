@@ -29,11 +29,13 @@
     <nav class="nav wrap" aria-label="主导航">
       <a class="brand" href="index.html" aria-label="Xinma's Blog 首页">
         <img src="assets/images/avatar.svg" alt="" width="40" height="40">
-        <span>Xinma's Blog</span>
+        <span data-site-name>Xinma's Blog</span>
       </a>
       <div class="nav-links">
         <a href="index.html" aria-current="page">首页</a>
         <a href="#posts">文章</a>
+        <a href="plan.html">计划</a>
+        <a href="edit.html">编辑</a>
         <a href="about.html">关于</a>
       </div>
       <button class="theme-toggle" type="button" aria-label="切换深色或浅色模式" aria-pressed="false">
@@ -46,8 +48,8 @@
     <section class="hero wrap">
       <div class="hero-copy">
         <p class="eyebrow">中文个人博客</p>
-        <h1>Xinma's Blog</h1>
-        <p class="lead">记录学习、技术与生活。把零散的想法整理成可以回看的笔记，也把每一次配置、提交和复盘留下清晰痕迹。</p>
+        <h1 data-site-name>Xinma's Blog</h1>
+        <p class="lead" data-home-intro>记录学习、技术与生活。把零散的想法整理成可以回看的笔记，也把每一次配置、提交和复盘留下清晰痕迹。</p>
         <div class="hero-actions">
           <a class="button primary" href="#posts">查看文章</a>
           <a class="button secondary" href="about.html">了解作者</a>
@@ -70,40 +72,40 @@
         <h2 id="posts-title">最新文章</h2>
       </div>
       <div class="post-grid">
-        <article class="post-card">
+        <article class="post-card" data-post-card="welcome">
           <div class="post-meta">
-            <time datetime="2026-07-14">2026-07-14</time>
-            <span>随笔</span>
+            <time datetime="2026-07-14" data-post-date>2026-07-14</time>
+            <span data-post-category>随笔</span>
           </div>
-          <h3><a href="posts/welcome.html">欢迎来到我的博客</a></h3>
-          <p>这篇文章说明这个博客会记录什么，以及如何把示例内容逐步替换成真正的个人笔记。</p>
-          <div class="tags" aria-label="文章标签">
+          <h3><a href="posts/welcome.html" data-post-title>欢迎来到我的博客</a></h3>
+          <p data-post-summary>这篇文章说明这个博客会记录什么，以及如何把示例内容逐步替换成真正的个人笔记。</p>
+          <div class="tags" aria-label="文章标签" data-post-tags>
             <span>博客</span><span>开始</span>
           </div>
           <a class="read-more" href="posts/welcome.html">阅读全文</a>
         </article>
 
-        <article class="post-card">
+        <article class="post-card" data-post-card="git-and-github">
           <div class="post-meta">
-            <time datetime="2026-07-14">2026-07-14</time>
-            <span>技术</span>
+            <time datetime="2026-07-14" data-post-date>2026-07-14</time>
+            <span data-post-category>技术</span>
           </div>
-          <h3><a href="posts/git-and-github.html">Git、GitHub 与第一次提交</a></h3>
-          <p>用一次真实的初始化流程，梳理仓库、提交、远程地址和 GitHub Pages 之间的关系。</p>
-          <div class="tags" aria-label="文章标签">
+          <h3><a href="posts/git-and-github.html" data-post-title>Git、GitHub 与第一次提交</a></h3>
+          <p data-post-summary>用一次真实的初始化流程，梳理仓库、提交、远程地址和 GitHub Pages 之间的关系。</p>
+          <div class="tags" aria-label="文章标签" data-post-tags>
             <span>Git</span><span>GitHub</span>
           </div>
           <a class="read-more" href="posts/git-and-github.html">阅读全文</a>
         </article>
 
-        <article class="post-card">
+        <article class="post-card" data-post-card="learning-notes">
           <div class="post-meta">
-            <time datetime="2026-07-14">2026-07-14</time>
-            <span>学习</span>
+            <time datetime="2026-07-14" data-post-date>2026-07-14</time>
+            <span data-post-category>学习</span>
           </div>
-          <h3><a href="posts/learning-notes.html">如何整理自己的学习笔记</a></h3>
-          <p>从命名、归档、复盘到发布，整理一套低负担、可长期坚持的学习笔记方法。</p>
-          <div class="tags" aria-label="文章标签">
+          <h3><a href="posts/learning-notes.html" data-post-title>如何整理自己的学习笔记</a></h3>
+          <p data-post-summary>从命名、归档、复盘到发布，整理一套低负担、可长期坚持的学习笔记方法。</p>
+          <div class="tags" aria-label="文章标签" data-post-tags>
             <span>笔记</span><span>复盘</span>
           </div>
           <a class="read-more" href="posts/learning-notes.html">阅读全文</a>

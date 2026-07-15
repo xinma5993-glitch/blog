@@ -29,11 +29,13 @@
     <nav class="nav wrap" aria-label="主导航">
       <a class="brand" href="../index.html" aria-label="Xinma's Blog 首页">
         <img src="../assets/images/avatar.svg" alt="" width="40" height="40">
-        <span>Xinma's Blog</span>
+        <span data-site-name>Xinma's Blog</span>
       </a>
       <div class="nav-links">
         <a href="../index.html">首页</a>
         <a href="../index.html#posts">文章</a>
+        <a href="../plan.html">计划</a>
+        <a href="../edit.html">编辑</a>
         <a href="../about.html">关于</a>
       </div>
       <button class="theme-toggle" type="button" aria-label="切换深色或浅色模式" aria-pressed="false">
@@ -43,16 +45,17 @@
   </header>
 
   <main id="main" class="wrap article-layout">
-    <article class="article">
+    <article class="article" data-post-page="welcome">
       <header class="article-header">
         <a class="back-link" href="../index.html#posts">返回文章列表</a>
-        <h1>欢迎来到我的博客</h1>
+        <h1 data-post-title>欢迎来到我的博客</h1>
         <div class="post-meta">
-          <time datetime="2026-07-14">2026-07-14</time>
-          <span>博客</span>
-          <span>开始</span>
+          <time datetime="2026-07-14" data-post-date>2026-07-14</time>
+          <span data-post-tag>博客</span>
+          <span data-post-tag>开始</span>
         </div>
       </header>
+      <div data-post-body>
       <p>这是 Xinma's Blog 的第一篇示例文章。它不是一个空模板，而是一篇可以直接阅读的起点：后续你可以把这里替换成真正的个人记录、学习总结或项目复盘。</p>
       <p>我希望这个博客保持简单。没有复杂的构建流程，没有依赖外部服务的页面资源，也不需要数据库。每一篇文章都是普通 HTML 文件，修改后可以直接通过 GitHub Pages 发布。</p>
       <h2>这里会记录什么</h2>
@@ -60,6 +63,7 @@
       <h2>如何替换这篇文章</h2>
       <p>当你准备发布自己的第一篇正式文章时，可以保留页面结构，替换标题、日期、标签和正文。首页的文章卡片也要同步修改，确保读者能从首页进入新文章。</p>
       <p>如果还没有明确主题，可以先写一篇短复盘：今天完成了什么、为什么这样做、下次要注意什么。这类笔记最容易开始，也最容易坚持。</p>
+      </div>
       <nav class="article-nav" aria-label="文章导航">
         <a href="../index.html">返回首页</a>
         <a href="git-and-github.html">下一篇：Git、GitHub 与第一次提交</a>

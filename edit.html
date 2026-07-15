@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>内容编辑 | Xinma's Blog</title>
+  <meta name="description" content="Xinma's Blog 的本地内容编辑器，可在浏览器中修改首页、关于和文章内容并导出 JSON。">
+  <link rel="canonical" href="https://xinma5993-glitch.github.io/blog/edit.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="内容编辑 | Xinma's Blog">
+  <meta property="og:description" content="在浏览器中本地编辑博客内容并导出 JSON。">
+  <meta property="og:url" content="https://xinma5993-glitch.github.io/blog/edit.html">
+  <meta property="og:site_name" content="Xinma's Blog">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
+  <script>
+    (function () {
+      var theme = localStorage.getItem('theme');
+      if (theme === 'light' || theme === 'dark') {
+        document.documentElement.dataset.theme = theme;
+      }
+    }());
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="主导航">
+      <a class="brand" href="index.html" aria-label="Xinma's Blog 首页">
+        <img src="assets/images/avatar.svg" alt="" width="40" height="40">
+        <span data-site-name>Xinma's Blog</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="index.html#posts">文章</a>
+        <a href="plan.html">计划</a>
+        <a href="edit.html" aria-current="page">编辑</a>
+        <a href="about.html">关于</a>
+      </div>
+      <button class="theme-toggle" type="button" aria-label="切换深色或浅色模式" aria-pressed="false">
+        <span class="theme-icon" aria-hidden="true"></span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main" class="page-main wrap">
+    <section class="content-page editor-page" aria-labelledby="editor-title">
+      <p class="eyebrow">Local Editor</p>
+      <h1 id="editor-title">内容编辑</h1>
+      <p>这个编辑器适合快速修改首页、关于页和示例文章。保存后改动只保存在当前浏览器，不会自动写回 GitHub；你可以导出 JSON 作为备份或后续整理进仓库。</p>
+
+      <form class="editor-form" data-content-form>
+        <section aria-labelledby="site-section">
+          <h2 id="site-section">站点信息</h2>
+          <div class="form-grid">
+            <label>网站名称
+              <input type="text" name="siteName" autocomplete="off">
+            </label>
+            <label>作者名
+              <input type="text" name="authorName" autocomplete="off">
+            </label>
+            <label class="full-field">首页介绍
+              <textarea name="homeIntro" rows="4"></textarea>
+            </label>
+            <label class="full-field">关于页介绍
+              <textarea name="aboutIntro" rows="4"></textarea>
+            </label>
+          </div>
+        </section>
+
+        <section aria-labelledby="post-section">
+          <h2 id="post-section">文章内容</h2>
+          <label>选择文章
+            <select name="postSelect" data-post-select></select>
+          </label>
+          <div class="form-grid">
+            <label>标题
+              <input type="text" name="postTitle" autocomplete="off">
+            </label>
+            <label>日期
+              <input type="date" name="postDate">
+            </label>
+            <label>分类
+              <input type="text" name="postCategory" autocomplete="off">
+            </label>
+            <label>标签，用逗号分隔
+              <input type="text" name="postTags" autocomplete="off">
+            </label>
+            <label class="full-field">摘要
+              <textarea name="postSummary" rows="3"></textarea>
+            </label>
+            <label class="full-field">正文，每段一行；二级标题用 “## 标题”
+              <textarea name="postBody" rows="12"></textarea>
+            </label>
+          </div>
+        </section>
+
+        <div class="tool-actions">
+          <button class="button primary" type="submit">保存到浏览器</button>
+          <button class="button secondary" type="button" data-content-export>导出 JSON</button>
+          <label class="file-button">
+            导入 JSON
+            <input type="file" accept="application/json" data-content-import>
+          </label>
+          <button class="button secondary" type="button" data-content-reset>恢复默认</button>
+        </div>
+        <p class="status-text" data-content-status role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>&copy; <span data-current-year>2026</span> xinma5993-glitch.</p>
+      <a href="https://github.com/xinma5993-glitch/blog" rel="noopener">GitHub 仓库</a>
+    </div>
+  </footer>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/content-editor.js" defer></script>
+</body>
+</html>

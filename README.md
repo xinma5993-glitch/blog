@@ -16,14 +16,22 @@ https://xinma5993-glitch.github.io/blog/
 .
 ├── index.html
 ├── about.html
+├── plan.html
+├── edit.html
 ├── 404.html
 ├── posts/
 │   ├── welcome.html
 │   ├── git-and-github.html
 │   └── learning-notes.html
+├── content/
+│   ├── site/content.json
+│   ├── posts/posts.json
+│   └── plans/plan.json
 ├── assets/
 │   ├── css/style.css
 │   ├── js/main.js
+│   ├── js/content-editor.js
+│   ├── js/planner.js
 │   └── images/
 │       ├── avatar.svg
 │       └── favicon.svg
@@ -65,15 +73,34 @@ http://localhost:8000/
 python scripts/check_site.py
 ```
 
+## 在网页里修改内容
+
+访问 `edit.html` 可以在浏览器中修改网站名称、首页介绍、关于介绍和三篇示例文章。改动会保存在当前浏览器的 `localStorage`，不会自动写回 GitHub 仓库。
+
+如果需要把网页中的修改变成长期版本：
+
+1. 在 `edit.html` 点击“导出 JSON”。
+2. 将导出的内容整理回 `content/site/content.json` 和 `content/posts/posts.json`，并同步更新对应 HTML。
+3. 运行 `python scripts/check_site.py`。
+4. 提交并推送改动。
+
+## 计划表
+
+访问 `plan.html` 可以维护学习、写作和网站维护计划。计划表同样保存在当前浏览器中，并支持导出和导入 JSON。默认计划存放在 `content/plans/plan.json`。
+
 ## 修改网站信息
 
 网站名称和首页介绍主要在 `index.html` 中修改。
 
+默认站点内容也整理在 `content/site/content.json` 中，便于后续维护。
+
 作者介绍在 `about.html` 中修改。
+
+文章默认数据在 `content/posts/posts.json` 中整理，正式发布时仍需同步更新 `posts/` 中的 HTML 页面和首页入口。
 
 全站样式在 `assets/css/style.css` 中修改。
 
-深色模式和年份更新逻辑在 `assets/js/main.js` 中修改。
+深色模式、年份更新和浏览器内容覆盖逻辑在 `assets/js/main.js` 中修改。
 
 ## GitHub Pages 部署
 
