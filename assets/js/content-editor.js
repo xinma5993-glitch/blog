@@ -170,11 +170,7 @@
     };
     state.posts.unshift(post);
     localStorage.setItem(storageKey, JSON.stringify(state));
-    fillForm();
-    postSelect.value = post.slug;
-    currentSlug = post.slug;
-    fillPostFields(post);
-    setStatus('已新建文章。选择“保存到分类”后点击保存，首页会显示这篇文章。');
+    window.location.href = 'post.html?slug=' + encodeURIComponent(post.slug) + '&edit=1';
   }
 
   function downloadJson(filename, value) {

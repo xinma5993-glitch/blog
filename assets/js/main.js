@@ -74,6 +74,20 @@
     }
     container.textContent = '';
     body.forEach(function (block) {
+      if (block.type === 'image' && block.src) {
+        var figure = document.createElement('figure');
+        var image = document.createElement('img');
+        image.src = block.src;
+        image.alt = block.alt || '文章图片';
+        figure.appendChild(image);
+        if (block.caption) {
+          var caption = document.createElement('figcaption');
+          caption.textContent = block.caption;
+          figure.appendChild(caption);
+        }
+        container.appendChild(figure);
+        return;
+      }
       var tagName = block.type === 'h2' ? 'h2' : 'p';
       var element = document.createElement(tagName);
       element.textContent = block.text || '';

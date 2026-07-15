@@ -25,6 +25,7 @@ REQUIRED_FILES = [
     "assets/js/main.js",
     "assets/js/planner.js",
     "assets/js/content-editor.js",
+    "assets/js/post-editor.js",
     "assets/images/avatar.svg",
     "assets/images/favicon.svg",
     "content/README.md",

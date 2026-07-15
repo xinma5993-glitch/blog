@@ -55,12 +55,32 @@
           <span data-dynamic-post-tags></span>
         </div>
       </header>
-      <div data-dynamic-post-body>
+      <div class="inline-editor-panel" data-post-editor-panel hidden>
+        <div class="form-grid">
+          <label>日期
+            <input type="date" data-post-edit-date>
+          </label>
+          <label>分类
+            <input type="text" data-post-edit-category list="post-category-options" placeholder="例如：学习、技术、生活">
+            <datalist id="post-category-options" data-post-category-options></datalist>
+          </label>
+          <label>标签，用逗号分隔
+            <input type="text" data-post-edit-tags>
+          </label>
+          <label class="full-field">摘要
+            <textarea rows="3" data-post-edit-summary></textarea>
+          </label>
+        </div>
+      </div>
+      <div data-dynamic-post-body data-post-edit-body>
         <p>请从首页文章列表进入文章，或在地址中提供正确的文章 slug。</p>
       </div>
+      <p class="status-text" data-post-edit-status role="status"></p>
       <nav class="article-nav" aria-label="文章导航">
         <a href="index.html#posts">返回文章列表</a>
-        <a href="edit.html">新建或编辑文章</a>
+        <button class="button secondary" type="button" data-post-edit-toggle>编辑本文</button>
+        <button class="button primary" type="button" data-post-edit-save hidden>保存本文</button>
+        <a href="edit.html">管理文章</a>
       </nav>
     </article>
   </main>
@@ -72,5 +92,6 @@
     </div>
   </footer>
   <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/post-editor.js" defer></script>
 </body>
 </html>

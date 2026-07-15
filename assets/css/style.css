@@ -438,11 +438,47 @@ h3 {
 
 .article-nav {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 16px;
   margin-top: 34px;
   border-top: 1px solid var(--line);
   padding-top: 22px;
+}
+
+.article figure {
+  margin: 24px 0;
+}
+
+.article figure img {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.article figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  text-align: center;
+}
+
+.inline-editor-panel {
+  margin-bottom: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface-soft);
+  padding: 18px;
+}
+
+.dynamic-article.is-editing [contenteditable="true"] {
+  border-radius: var(--radius);
+  outline: 2px dashed var(--accent);
+  outline-offset: 6px;
+}
+
+.dynamic-article.is-editing [data-post-edit-body] {
+  min-height: 280px;
 }
 
 .not-found {
