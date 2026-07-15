@@ -71,9 +71,12 @@
 
         <section aria-labelledby="post-section">
           <h2 id="post-section">文章内容</h2>
-          <label>选择文章
-            <select name="postSelect" data-post-select></select>
-          </label>
+          <div class="editor-toolbar">
+            <label>选择文章
+              <select name="postSelect" data-post-select></select>
+            </label>
+            <button class="button secondary" type="button" data-new-post>新建文章</button>
+          </div>
           <div class="form-grid">
             <label>标题
               <input type="text" name="postTitle" autocomplete="off">
@@ -81,8 +84,9 @@
             <label>日期
               <input type="date" name="postDate">
             </label>
-            <label>分类
-              <input type="text" name="postCategory" autocomplete="off">
+            <label>保存到分类
+              <input type="text" name="postCategory" list="category-options" autocomplete="off" placeholder="例如：学习、技术、生活">
+              <datalist id="category-options" data-category-options></datalist>
             </label>
             <label>标签，用逗号分隔
               <input type="text" name="postTags" autocomplete="off">

@@ -81,6 +81,57 @@
     });
   }
 
+  function postUrl(post) {
+    return post.url || 'post.html?slug=' + encodeURIComponent(post.slug || '');
+  }
+
+  function createPostCard(post) {
+    var article = document.createElement('article');
+    article.className = 'post-card';
+    article.dataset.postCard = post.slug || '';
+
+    var meta = document.createElement('div');
+    meta.className = 'post-meta';
+    var date = document.createElement('time');
+    date.dataset.postDate = '';
+    date.dateTime = post.date || '';
+    date.textContent = post.date || '';
+    var category = document.createElement('span');
+    category.dataset.postCategory = '';
+    category.textContent = post.category || '未分类';
+    meta.appendChild(date);
+    meta.appendChild(category);
+
+    var title = document.createElement('h3');
+    var link = document.createElement('a');
+    link.dataset.postTitle = '';
+    link.href = postUrl(post);
+    link.textContent = post.title || '未命名文章';
+    title.appendChild(link);
+
+    var summary = document.createElement('p');
+    summary.dataset.postSummary = '';
+    summary.textContent = post.summary || '暂无摘要。';
+
+    var tags = document.createElement('div');
+    tags.className = 'tags';
+    tags.dataset.postTags = '';
+    tags.setAttribute('aria-label', '文章标签');
+    renderTags(tags, post.tags);
+
+    var readMore = document.createElement('a');
+    readMore.className = 'read-more';
+    readMore.href = postUrl(post);
+    readMore.textContent = '阅读全文';
+
+    article.appendChild(meta);
+    article.appendChild(title);
+    article.appendChild(summary);
+    article.appendChild(tags);
+    article.appendChild(readMore);
+    return article;
+  }
+
   function applyPostToCard(card, post) {
     var date = card.querySelector('[data-post-date]');
     setText('[data-post-title]', post.title, card);
@@ -118,18 +169,56 @@
     }
   }
 
+  function renderDynamicPostPage(posts) {
+    var page = document.querySelector('[data-dynamic-post-page]');
+    if (!page) {
+      return;
+    }
+    var params = new URLSearchParams(window.location.search);
+    var slug = params.get('slug');
+    var post = posts.find(function (item) {
+      return item.slug === slug;
+    });
+    if (!post) {
+      document.title = '文章未找到 | Xinma\'s Blog';
+      return;
+    }
+
+    var title = page.querySelector('[data-dynamic-post-title]');
+    var date = page.querySelector('[data-dynamic-post-date]');
+    var category = page.querySelector('[data-dynamic-post-category]');
+    var tagContainer = page.querySelector('[data-dynamic-post-tags]');
+    if (title) {
+      title.textContent = post.title || '未命名文章';
+    }
+    if (date) {
+      date.dateTime = post.date || '';
+      date.textContent = post.date || '';
+    }
+    if (category) {
+      category.textContent = post.category || '未分类';
+    }
+    if (tagContainer) {
+      tagContainer.textContent = Array.isArray(post.tags) ? post.tags.join(' / ') : '';
+    }
+    renderBody(page.querySelector('[data-dynamic-post-body]'), post.body);
+    document.title = (post.title || '文章') + ' | Xinma\'s Blog';
+  }
+
   function applyContentOverride() {
     var data = readContentOverride();
     if (!data) {
       return;
     }
     var posts = Array.isArray(data.posts) ? data.posts : [];
+    var existingCards = {};
     setText('[data-site-name]', data.siteName);
     setText('[data-author-name]', data.authorName);
     setText('[data-home-intro]', data.homeIntro);
     setText('[data-about-intro]', data.aboutIntro);
 
     Array.prototype.forEach.call(document.querySelectorAll('[data-post-card]'), function (card) {
+      existingCards[card.dataset.postCard] = true;
       var post = posts.find(function (item) {
         return item.slug === card.dataset.postCard;
       });
@@ -137,6 +226,15 @@
         applyPostToCard(card, post);
       }
     });
+
+    var grid = document.querySelector('.post-grid');
+    if (grid) {
+      posts.forEach(function (post) {
+        if (!existingCards[post.slug]) {
+          grid.appendChild(createPostCard(post));
+        }
+      });
+    }
 
     var postPage = document.querySelector('[data-post-page]');
     if (postPage) {
@@ -147,6 +245,7 @@
         applyPostToPage(postPage, currentPost);
       }
     }
+    renderDynamicPostPage(posts);
   }
 
   applyContentOverride();

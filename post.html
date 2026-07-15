@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>文章 | Xinma's Blog</title>
+  <meta name="description" content="Xinma's Blog 的动态文章页面，用于阅读在浏览器中新增的文章。">
+  <link rel="canonical" href="https://xinma5993-glitch.github.io/blog/post.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="文章 | Xinma's Blog">
+  <meta property="og:description" content="阅读 Xinma's Blog 中的文章。">
+  <meta property="og:url" content="https://xinma5993-glitch.github.io/blog/post.html">
+  <meta property="og:site_name" content="Xinma's Blog">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
+  <script>
+    (function () {
+      var theme = localStorage.getItem('theme');
+      if (theme === 'light' || theme === 'dark') {
+        document.documentElement.dataset.theme = theme;
+      }
+    }());
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="主导航">
+      <a class="brand" href="index.html" aria-label="Xinma's Blog 首页">
+        <img src="assets/images/avatar.svg" alt="" width="40" height="40">
+        <span data-site-name>Xinma's Blog</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="index.html#posts">文章</a>
+        <a href="plan.html">计划</a>
+        <a href="edit.html">编辑</a>
+        <a href="about.html">关于</a>
+      </div>
+      <button class="theme-toggle" type="button" aria-label="切换深色或浅色模式" aria-pressed="false">
+        <span class="theme-icon" aria-hidden="true"></span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main" class="wrap article-layout">
+    <article class="article dynamic-article" data-dynamic-post-page>
+      <header class="article-header">
+        <a class="back-link" href="index.html#posts">返回文章列表</a>
+        <h1 data-dynamic-post-title>文章未找到</h1>
+        <div class="post-meta">
+          <time datetime="" data-dynamic-post-date></time>
+          <span data-dynamic-post-category></span>
+          <span data-dynamic-post-tags></span>
+        </div>
+      </header>
+      <div data-dynamic-post-body>
+        <p>请从首页文章列表进入文章，或在地址中提供正确的文章 slug。</p>
+      </div>
+      <nav class="article-nav" aria-label="文章导航">
+        <a href="index.html#posts">返回文章列表</a>
+        <a href="edit.html">新建或编辑文章</a>
+      </nav>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>&copy; <span data-current-year>2026</span> xinma5993-glitch.</p>
+      <a href="https://github.com/xinma5993-glitch/blog" rel="noopener">GitHub 仓库</a>
+    </div>
+  </footer>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

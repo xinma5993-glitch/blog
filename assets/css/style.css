@@ -472,6 +472,14 @@ h3 {
   padding-top: 24px;
 }
 
+.editor-toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: end;
+  margin-bottom: 16px;
+}
+
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -655,7 +663,8 @@ textarea:focus-visible {
     flex-direction: column;
   }
 
-  .form-grid {
+  .form-grid,
+  .editor-toolbar {
     grid-template-columns: 1fr;
   }
 }

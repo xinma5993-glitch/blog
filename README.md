@@ -18,6 +18,7 @@ https://xinma5993-glitch.github.io/blog/
 ├── about.html
 ├── plan.html
 ├── edit.html
+├── post.html
 ├── 404.html
 ├── posts/
 │   ├── welcome.html
@@ -75,7 +76,9 @@ python scripts/check_site.py
 
 ## 在网页里修改内容
 
-访问 `edit.html` 可以在浏览器中修改网站名称、首页介绍、关于介绍和三篇示例文章。改动会保存在当前浏览器的 `localStorage`，不会自动写回 GitHub 仓库。
+访问 `edit.html` 可以在浏览器中修改网站名称、首页介绍、关于介绍和文章内容，也可以点击“新建文章”创建浏览器本地文章。保存时通过“保存到分类”字段选择或输入分类。改动会保存在当前浏览器的 `localStorage`，不会自动写回 GitHub 仓库。
+
+浏览器中新建的文章会出现在首页文章列表中，并通过 `post.html?slug=文章标识` 打开。这个页面依赖当前浏览器保存的数据；如果换浏览器或清除缓存，需要先导入之前导出的 JSON。
 
 如果需要把网页中的修改变成长期版本：
 

@@ -7,6 +7,8 @@
 
   var status = document.querySelector('[data-content-status]');
   var postSelect = document.querySelector('[data-post-select]');
+  var newPostButton = document.querySelector('[data-new-post]');
+  var categoryOptions = document.querySelector('[data-category-options]');
   var exportButton = document.querySelector('[data-content-export]');
   var importInput = document.querySelector('[data-content-import]');
   var resetButton = document.querySelector('[data-content-reset]');
@@ -58,6 +60,25 @@
     });
   }
 
+  function slugify(value) {
+    var base = value.trim().toLowerCase()
+      .replace(/['"]/g, '')
+      .replace(/[^a-z0-9\u4e00-\u9fa5]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+    if (!base) {
+      base = 'new-post';
+    }
+    var slug = base;
+    var index = 2;
+    while (state.posts.some(function (post) {
+      return post.slug === slug;
+    })) {
+      slug = base + '-' + index;
+      index += 1;
+    }
+    return slug;
+  }
+
   function selectedPost(slug) {
     return state.posts.find(function (post) {
       return post.slug === (slug || postSelect.value);
@@ -95,6 +116,16 @@
     form.elements.aboutIntro.value = state.aboutIntro || '';
 
     postSelect.textContent = '';
+    if (categoryOptions) {
+      categoryOptions.textContent = '';
+      Array.from(new Set(state.posts.map(function (post) {
+        return post.category;
+      }).filter(Boolean))).forEach(function (category) {
+        var option = document.createElement('option');
+        option.value = category;
+        categoryOptions.appendChild(option);
+      });
+    }
     state.posts.forEach(function (post) {
       var option = document.createElement('option');
       option.value = post.slug;
@@ -120,6 +151,30 @@
     syncCurrentPostFromFields();
     localStorage.setItem(storageKey, JSON.stringify(state));
     setStatus('已保存到当前浏览器。回到首页、关于页或文章页即可看到改动。');
+  }
+
+  function createNewPost() {
+    syncSiteFromFields();
+    syncCurrentPostFromFields(currentSlug);
+    var today = new Date().toISOString().slice(0, 10);
+    var post = {
+      slug: slugify('new-post'),
+      title: '新的文章',
+      date: today,
+      category: form.elements.postCategory.value.trim() || '未分类',
+      tags: [],
+      summary: '这里填写文章摘要。',
+      body: [
+        { type: 'p', text: '这里开始写正文。每段一行，二级标题用 “## 标题”。' }
+      ]
+    };
+    state.posts.unshift(post);
+    localStorage.setItem(storageKey, JSON.stringify(state));
+    fillForm();
+    postSelect.value = post.slug;
+    currentSlug = post.slug;
+    fillPostFields(post);
+    setStatus('已新建文章。选择“保存到分类”后点击保存，首页会显示这篇文章。');
   }
 
   function downloadJson(filename, value) {
@@ -151,6 +206,8 @@
       event.preventDefault();
       save();
     });
+
+    newPostButton.addEventListener('click', createNewPost);
 
     exportButton.addEventListener('click', function () {
       syncSiteFromFields();
